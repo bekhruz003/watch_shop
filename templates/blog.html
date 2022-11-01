@@ -1,0 +1,93 @@
+{% extends 'layouts/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+    <main>
+        <!--? Hero Area Start-->
+        <div class="slider-area ">
+            <div class="single-slider slider-height2 d-flex align-items-center">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="hero-cap text-center">
+                                {% if request.GET %}
+                                    <h2>#{{ request.GET.tag }}</h2>
+                                {% else %}
+                                    <h2>Blog</h2>
+                                {% endif %}    
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--? Hero Area End-->
+        <!--================Blog Area =================-->
+        <section class="blog_area section-padding">
+            <div class="container">
+                <div class="row">
+                    
+                        <div class="col-lg-8 mb-5 mb-lg-0">
+                         <div class="blog_left_sidebar">
+                            {% for post in object_list %}
+                              <article class="blog_item">
+                                    <div class="blog_item_img">
+                                      <img class="card-img rounded-0" src="{{ post.main_image.url }}" alt="">
+                                      <a href="#" class="blog_item_date">
+                                        <h3>{{ post.created_at|date:"d F" }}</h3>
+                                    </a>
+                                </div>
+
+                                <div class="blog_details">
+                                    <a class="d-inline-block" href="{% url 'blogs:detail' post.pk %}">
+                                        <h2>{{ post.title }}</h2>
+                                    </a>
+                                    <ul class="blog-info-link">
+                                    {% for tag in object.tag.values %}
+                                        <li><a href="#"><i class="fa fa-user"></i>#{{ tag.name }}</a></li>
+                                    {% endfor %}
+                                        
+                                    </ul>
+                                </div>
+                                </article>
+                              {% endfor %} 
+                              <nav class="blog-pagination justify-content-center d-flex">
+                                <ul class="pagination">
+                                    {% for page in page_obj.paginator.page_range %}
+                                        <li class="page-item">
+                                            <a href="?page={{ page }}" class="page-link">{{ page }}</a>
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        {% include './blog_sidebar.html' %}
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--================Blog Area =================-->
+    </main>
+
+{% endblock %}  
+
+{% block extra_js %}
+
+<script>
+    function addUrlParameter(name, value){
+        let searchParameter = new URLSearchParams(window.location.search)
+        if(searchParameter.has(name) && searchParameter.get(name) == value){
+            searchParameter.delete(name)
+        }else{
+            searchParameter.set(name, value)
+        }
+        window.location.search = searchParameter.toString()
+    }
+</script>
+
+
+{% endblock %}
