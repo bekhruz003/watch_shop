@@ -20,6 +20,7 @@ INSTALLED_APPS = [
 
     'ckeditor',
     'crispy_forms',
+    'debug_toolbar',
 
     'pages',
     'users',
@@ -36,6 +37,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
 ]
 
 ROOT_URLCONF = 'config.urls'
@@ -121,3 +123,7 @@ except ImportError:
     pass
 
 AUTH_USER_MODEL = 'users.UserModel'
+
+INTERNAL_IPS = [
+    '127.0.0.1',
+]

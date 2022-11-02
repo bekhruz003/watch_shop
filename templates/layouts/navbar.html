@@ -12,11 +12,10 @@
                     </div>
                     <!-- Main-menu -->
                     <div class="main-menu d-none d-lg-block">
-                        <nav>                                                
-                            <ul id="navigation">  
+                        <nav>
+                            <ul id="navigation">
                                 <li><a href="{% url 'pages:home' %}">Home</a></li>
                                 <li><a href="{% url 'shop:home' %}">shop</a></li>
-                                <li><a href="about.html">about</a></li>
                                 <!-- <li class="hot"><a href="#">Latest</a>
                                     <ul class="submenu">
                                         <li><a href="shop.html"> Product list</a></li>
@@ -33,6 +32,16 @@
                             </ul>
                         </nav>
                     </div>
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            EN
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#">UZ</a>
+                            <a class="dropdown-item" href="#">RU</a>
+                        </div>
+                    </div>
                     <!-- Header Right -->
                     <div class="header-right">
                         <ul>
@@ -41,15 +50,16 @@
                             {% else %}
                                 <li><a href=""><span class="flaticon-user"></span></a></li>
                             {% endif %}
-                            {% if request.user.is_authenticated %}    
-                                <li><a href="{% url 'shop:all_wishlist' %}"><span class="flaticon-heart"></span></a></li>
-                            {% endif %} 
+                            {% if request.user.is_authenticated %}
+                                <li><a href="{% url 'shop:all_wishlist' %}"><span class="flaticon-heart"></span></a>
+                                </li>
+                            {% endif %}
                             {% cart_info request as info %}
-                                <li><a href="#"><span class="flaticon-shopping-cart">${{ info.1 }}</span></a> </li>
-                                <!-- <li><a href="#"><span>{{ info.0 }}</span></a> </li>
+                            <li><a href="#"><span class="flaticon-shopping-cart">${{ info.1 }}</span></a></li>
+                            <!-- <li><a href="#"><span>{{ info.0 }}</span></a> </li>
                                 <li><a href=""><span>Login</span></a></li> -->
 
-                       </ul>
+                        </ul>
                     </div>
                 </div>
                 <!-- Mobile Menu -->
