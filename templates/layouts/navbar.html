@@ -43,7 +43,8 @@
                             {% get_available_languages as LANGUAGES %}
                             {% for lang in LANGUAGES %}
                                 {% if lang.0 != LANGUAGE_CODE %}
-                                    <a class="dropdown-item" href="/{{ lang.0 }}/{{ request.path|slice:'4:' }}">{{ lang.0|upper }}</a>
+                                    <a class="dropdown-item"
+                                       href="/{{ lang.0 }}/{{ request.path|slice:'4:' }}">{{ lang.0|upper }}</a>
                                 {% endif %}
                             {% endfor %}
                         </div>
@@ -52,9 +53,10 @@
                     <div class="header-right">
                         <ul>
                             {% if request.user.is_authenticated %}
-                                <li><a href="#"><span>{% trans 'Log out' %}</span></a></li>
+                                <li><a href="{% url 'user:profile' %}"><span class="flaticon-user"></span></a></li>
+                                <li><a href="{% url 'user:logout' %}"><span>{% trans 'Log out' %}</span></a></li>
                             {% else %}
-                                <li><a href=""><span class="flaticon-user"></span></a></li>
+                                <li><a href="{% url 'user:login' %}"><span>{% trans 'Log in' %}</span></a></li>
                             {% endif %}
                             {% if request.user.is_authenticated %}
                                 <li><a href="{% url 'shop:all_wishlist' %}"><span class="flaticon-heart"></span></a>

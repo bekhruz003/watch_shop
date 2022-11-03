@@ -129,13 +129,10 @@ CKEDITOR_CONFIGS = {
     },
 }
 
-try:
-    from .local_settings import *
-except ImportError:
-    pass
-
 AUTH_USER_MODEL = 'users.UserModel'
 
 INTERNAL_IPS = [
     '127.0.0.1',
 ]
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
