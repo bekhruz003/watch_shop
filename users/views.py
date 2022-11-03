@@ -1,8 +1,12 @@
 from django.shortcuts import render, redirect
-from django.views.generic import TemplateView
+from django.views.generic import UpdateView
 from .forms import RegistrationForm, LoginForm
 from django.contrib.auth import login, logout, authenticate
 from django.core.exceptions import ValidationError
+
+
+class ProfileView(UpdateView):
+    template_name = 'profile.html'
 
 
 def logout_view(request):
