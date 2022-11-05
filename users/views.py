@@ -25,7 +25,7 @@ def login_view(request):
             if user is not None:
                 login(request, user)
                 return redirect('pages:home')
-            raise ValidationError('Wrong password or phone_number !')
+            raise ValidationError('Invalid password or phone_number !')
     return render(request, 'login.html', context={
         'form': form,
     })
