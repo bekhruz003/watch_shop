@@ -5,6 +5,14 @@ from django.views.generic import ListView, DetailView
 from .models import ProductModel, WishlistModel
 
 
+class ShoppingCart(ListView):
+    template_name = 'cart.html'
+
+    def get_queryset(self):
+        products = ProductModel.get_cart_objects(self.request)
+        return products
+
+
 class ShopView(ListView):
     template_name = 'shop.html'
     paginate_by = 3
