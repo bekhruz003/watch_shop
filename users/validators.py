@@ -41,3 +41,4 @@ class PhoneValidator:
     def __call__(self, value):
         if not PhoneValidator.validate(value):
             raise ValidationError(_("The value entered is not a phone number."))
+

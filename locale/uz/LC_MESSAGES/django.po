@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-02 20:40+0000\n"
+"POT-Creation-Date: 2022-11-07 15:11+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,6 +25,7 @@ msgstr ""
 
 #: blogs/models.py:8 blogs/models.py:23 blogs/models.py:47 blogs/models.py:66
 #: blogs/models.py:82 pages/models.py:10 pages/models.py:24 shop/models.py:20
+#: users/models.py:68
 msgid "created at"
 msgstr ""
 
@@ -32,7 +33,7 @@ msgstr ""
 msgid "comment"
 msgstr ""
 
-#: blogs/models.py:21 blogs/models.py:79 pages/models.py:7
+#: blogs/models.py:21 blogs/models.py:79 pages/models.py:7 users/models.py:66
 msgid "email"
 msgstr ""
 
@@ -128,7 +129,7 @@ msgstr ""
 msgid "banner image"
 msgstr ""
 
-#: shop/models.py:49
+#: shop/models.py:49 users/models.py:56
 msgid "user"
 msgstr ""
 
@@ -152,6 +153,64 @@ msgstr "Blog"
 msgid "Contact"
 msgstr "Aloqa"
 
-#: templates/layouts/navbar.html:55
+#: templates/layouts/navbar.html:57
+msgid "Order history"
+msgstr "Buyurtma tarixi"
+
+#: templates/layouts/navbar.html:58
 msgid "Log out"
 msgstr "Chiqish"
+
+#: templates/layouts/navbar.html:60
+#, fuzzy
+#| msgid "Log out"
+msgid "Log in"
+msgstr "Chiqish"
+
+#: users/forms.py:16
+msgid "Phone Number"
+msgstr ""
+
+#: users/forms.py:17
+msgid "Password"
+msgstr ""
+
+#: users/models.py:58
+msgid "first name"
+msgstr ""
+
+#: users/models.py:59
+msgid "last name"
+msgstr ""
+
+#: users/models.py:60
+msgid "country"
+msgstr ""
+
+#: users/models.py:61
+msgid "address1"
+msgstr ""
+
+#: users/models.py:62
+msgid "address2"
+msgstr ""
+
+#: users/models.py:63
+msgid "city"
+msgstr ""
+
+#: users/models.py:64
+msgid "district"
+msgstr ""
+
+#: users/models.py:65
+msgid "zip_code"
+msgstr ""
+
+#: users/models.py:67
+msgid "state"
+msgstr ""
+
+#: users/validators.py:43
+msgid "The value entered is not a phone number."
+msgstr ""

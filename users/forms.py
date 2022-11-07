@@ -1,7 +1,15 @@
 from django import forms
-from .models import UserModel
+from .models import UserModel, ProfileModel
 from django.core.exceptions import ValidationError
 from django.utils.translation import gettext_lazy as _
+
+
+class ProfileForm(forms.ModelForm):
+
+    class Meta:
+        model = ProfileModel
+        exclude = ['user', 'created_at']
+
 
 
 class LoginForm(forms.Form):
