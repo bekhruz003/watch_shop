@@ -5,6 +5,15 @@ register = template.Library()
 
 
 @register.simple_tag()
+def get_current_price(request, x):
+    data = request.GET.get('price')
+    if data:
+        return data.split(';')[x]
+    else:
+        return 'null'
+
+
+@register.simple_tag()
 def cart_info(request):
     return ProductModel.get_cart_info(request)
 

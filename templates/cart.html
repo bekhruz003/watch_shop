@@ -28,7 +28,7 @@
                                 <th scope="col">Product</th>
                                 <th scope="col">Price</th>
                                 <th scope="col">Quantity</th>
-                                <th scope="col">Total</th>
+                                <th scope="col">Number</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -66,7 +66,8 @@
                                         </div>
                                     </td>
                                     <td>
-                                        <h5>$720.00</h5>
+                                        {% cart_info request as info %}
+                                        <h5>{{ info.0 }} piece</h5>
                                     </td>
                                 </tr>
                             {% endfor %}
