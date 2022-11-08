@@ -53,7 +53,7 @@ class UserModel(AbstractUser):
 
 class ProfileModel(models.Model):
     user = models.OneToOneField(UserModel,
-                                on_delete=models.CASCADE, verbose_name=_('user'))
+                                on_delete=models.CASCADE, related_name='profiles', verbose_name=_('user'))
     phone = models.CharField(max_length=13, null=True, blank=True)
     first_name = models.CharField(max_length=50, null=True, blank=True, verbose_name=_('first name'))
     last_name = models.CharField(max_length=50, null=True, blank=True, verbose_name=_('last name'))

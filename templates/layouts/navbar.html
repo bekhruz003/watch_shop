@@ -54,7 +54,7 @@
                         <ul>
                             {% if request.user.is_authenticated %}
                                 <li><a href="{% url 'user:profile' %}"><span class="flaticon-user"></span></a></li>
-                                <li><a href=""><span>{% trans 'Order history' %}</span></a></li>
+                                <li><a href="{% url 'orders:history' %}"><span>{% trans 'Order history' %}</span></a></li>
                                 <li><a href="{% url 'user:logout' %}"><span>{% trans 'Log out' %}</span></a></li>
                             {% else %}
                                 <li><a href="{% url 'user:login' %}"><span>{% trans 'Log in' %}</span></a></li>
