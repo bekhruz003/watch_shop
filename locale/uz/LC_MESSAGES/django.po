@@ -115,15 +115,15 @@ msgstr ""
 
 #: shop/models.py:15
 msgid "price"
-msgstr ""
+msgstr "narxi"
 
 #: shop/models.py:16
 msgid "real price"
-msgstr ""
+msgstr "haqiqiy narxi"
 
 #: shop/models.py:17
 msgid "discount"
-msgstr ""
+msgstr "aksiyada"
 
 #: shop/models.py:19
 msgid "banner image"
@@ -131,11 +131,11 @@ msgstr ""
 
 #: shop/models.py:49 users/models.py:56
 msgid "user"
-msgstr ""
+msgstr "foydalanuvchi"
 
 #: shop/models.py:53
 msgid "product"
-msgstr ""
+msgstr "mahsulot"
 
 #: templates/layouts/navbar.html:18
 msgid "Home"
@@ -169,48 +169,48 @@ msgstr "Chiqish"
 
 #: users/forms.py:16
 msgid "Phone Number"
-msgstr ""
+msgstr "Telefon raqam"
 
 #: users/forms.py:17
 msgid "Password"
-msgstr ""
+msgstr "Parol"
 
 #: users/models.py:58
 msgid "first name"
-msgstr ""
+msgstr "Ism"
 
 #: users/models.py:59
 msgid "last name"
-msgstr ""
+msgstr "Familiya"
 
 #: users/models.py:60
 msgid "country"
-msgstr ""
+msgstr "Davlat"
 
 #: users/models.py:61
 msgid "address1"
-msgstr ""
+msgstr "manzil1"
 
 #: users/models.py:62
 msgid "address2"
-msgstr ""
+msgstr "manzil2"
 
 #: users/models.py:63
 msgid "city"
-msgstr ""
+msgstr "Shahar"
 
 #: users/models.py:64
 msgid "district"
-msgstr ""
+msgstr "ko'cha"
 
 #: users/models.py:65
 msgid "zip_code"
-msgstr ""
+msgstr "pochta kodi"
 
 #: users/models.py:67
 msgid "state"
-msgstr ""
+msgstr "shtat"
 
 #: users/validators.py:43
 msgid "The value entered is not a phone number."
-msgstr ""
+msgstr "Telefon raqam notogri"

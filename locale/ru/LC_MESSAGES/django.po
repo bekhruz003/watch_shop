@@ -171,48 +171,48 @@ msgstr "Выйти"
 
 #: users/forms.py:16
 msgid "Phone Number"
-msgstr ""
+msgstr "Номер телефона"
 
 #: users/forms.py:17
 msgid "Password"
-msgstr ""
+msgstr "Пароль"
 
 #: users/models.py:58
 msgid "first name"
-msgstr ""
+msgstr "Имя"
 
 #: users/models.py:59
 msgid "last name"
-msgstr ""
+msgstr "фамилия"
 
 #: users/models.py:60
 msgid "country"
-msgstr ""
+msgstr "страна"
 
 #: users/models.py:61
 msgid "address1"
-msgstr ""
+msgstr "адрес1"
 
 #: users/models.py:62
 msgid "address2"
-msgstr ""
+msgstr "адрес2"
 
 #: users/models.py:63
 msgid "city"
-msgstr ""
+msgstr "город"
 
 #: users/models.py:64
 msgid "district"
-msgstr ""
+msgstr "округ"
 
 #: users/models.py:65
 msgid "zip_code"
-msgstr ""
+msgstr "почтовый индекс"
 
 #: users/models.py:67
 msgid "state"
-msgstr ""
+msgstr "государство"
 
 #: users/validators.py:43
 msgid "The value entered is not a phone number."
-msgstr ""
+msgstr "Введенное значение не является номером телефона"
