@@ -24,9 +24,9 @@ INSTALLED_APPS = [
     'debug_toolbar',
 
     'pages',
-    'users',
     'shop',
     'orders',
+    'users',
     'blogs',
 ]
 

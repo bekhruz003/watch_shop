@@ -1,7 +1,6 @@
-from django.contrib.auth.models import AbstractUser, BaseUserManager
 from django.db import models
+from django.contrib.auth.models import AbstractUser, BaseUserManager
 from .validators import PhoneValidator
-from django.utils.translation import gettext_lazy as _
 
 
 class UserManager(BaseUserManager):
@@ -52,20 +51,18 @@ class UserModel(AbstractUser):
 
 
 class ProfileModel(models.Model):
-    user = models.OneToOneField(UserModel,
-                                on_delete=models.CASCADE, related_name='profiles', verbose_name=_('user'))
+    user = models.OneToOneField(UserModel, on_delete=models.CASCADE, related_name='profiles')
+    first_name = models.CharField(max_length=50, null=True, blank=True)
+    last_name = models.CharField(max_length=50, null=True, blank=True)
+    country = models.CharField(max_length=125, null=True, blank=True)
+    address1 = models.CharField(max_length=255, null=True, blank=True)
+    address2 = models.CharField(max_length=255, null=True, blank=True)
     phone = models.CharField(max_length=13, null=True, blank=True)
-    first_name = models.CharField(max_length=50, null=True, blank=True, verbose_name=_('first name'))
-    last_name = models.CharField(max_length=50, null=True, blank=True, verbose_name=_('last name'))
-    country = models.CharField(max_length=125, null=True, blank=True, verbose_name=_('country'))
-    address1 = models.CharField(max_length=255, null=True, blank=True, verbose_name=_('address1'))
-    address2 = models.CharField(max_length=255, null=True, blank=True, verbose_name=_('address2'))
-    city = models.CharField(max_length=100, null=True, blank=True, verbose_name=_('city'))
-    district = models.CharField(max_length=100, null=True, blank=True, verbose_name=_('district'))
-    zip_code = models.CharField(max_length=6, null=True, blank=True, verbose_name=_('zip_code'))
-    email = models.EmailField(null=True, blank=True, verbose_name=_('email'))
-    state = models.CharField(max_length=50, null=True, blank=True, verbose_name=_('state'))
-    created_at = models.DateTimeField(auto_now_add=True, verbose_name=_('created at'))
+    city = models.CharField(max_length=100, null=True, blank=True)
+    state = models.CharField(max_length=100, null=True, blank=True)
+    zip_code = models.CharField(max_length=6, null=True, blank=True)
+    email = models.EmailField(null=True, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:
         verbose_name = 'profile'

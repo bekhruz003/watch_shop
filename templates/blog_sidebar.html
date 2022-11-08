@@ -1,7 +1,7 @@
 {% load static %}
     <div class="blog_right_sidebar">
        <aside class="single_sidebar_widget search_widget">
-          <form action="{% url 'blogs:posts' %}", method="GET">
+          <form action="{% url 'blogs:posts' %}" method="GET">
              <div class="form-group">
                 <div class="input-group mb-3">
                    <input name="search" value="{{ request.GET.search }}" type="text" class="form-control" placeholder='Search Keyword'

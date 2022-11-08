@@ -1,9 +1,8 @@
+from django.core.exceptions import ValidationError
 from django.shortcuts import render, redirect, reverse
 from django.views.generic import UpdateView
-from .forms import RegistrationForm, LoginForm, ProfileForm
+from .forms import RegistrationsForm, LoginForm, ProfileForm
 from django.contrib.auth import login, logout, authenticate
-from django.core.exceptions import ValidationError
-
 from .models import ProfileModel
 
 
@@ -21,31 +20,33 @@ class ProfileView(UpdateView):
 
 def logout_view(request):
     logout(request)
-    return redirect('user:login')
+    return redirect('pages:home')
 
 
 def login_view(request):
-    form = LoginForm
+    form = LoginForm()
     if request.method == 'POST':
         form = LoginForm(data=request.POST)
         if form.is_valid():
             user = authenticate(
                 username=form.cleaned_data['phone_number'],
-                password=form.cleaned_data['password'])
+                password=form.cleaned_data['password']
+            )
             if user is not None:
                 login(request, user)
                 return redirect('pages:home')
-            raise ValidationError('Invalid password or phone_number !')
+            raise ValidationError('Неверный номер телефона или пароль!')
+
     return render(request, 'login.html', context={
         'form': form,
     })
 
 
 def user_registration(request):
-    form = RegistrationForm
+    form = RegistrationsForm()
 
     if request.method == 'POST':
-        form = RegistrationForm(data=request.POST)
+        form = RegistrationsForm(data=request.POST)
         if form.is_valid():
             del form.cleaned_data['confirm_password']
             user = form.save(commit=False)
